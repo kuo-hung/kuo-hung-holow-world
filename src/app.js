@@ -1,4 +1,3 @@
-window.alertify = require('alertifyjs');
 require('./bootstrap')
 
 import StudentNameList from './components/StudentNameList'
@@ -12,5 +11,9 @@ new Vue({
             title: 'Student List',
         }
     },
-    methods: {}
+    methods: {
+        doAdd(name) {
+            console.log(name);
+        }
+    }
 })

@@ -32,7 +32,7 @@ __webpack_require__.r(__webpack_exports__);
         return alertify.error('名稱未輸入');
       }
 
-      console.log(this.name);
+      this.$emit('add', this.name);
     },
     enterDoAdd: function enterDoAdd(e) {
       if (e.keyCode == 13 || e.which == 13) {
@@ -918,8 +918,6 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_StudentNameList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/StudentNameList */ "./src/components/StudentNameList.vue");
 /* harmony import */ var _components_AddStudent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/AddStudent */ "./src/components/AddStudent.vue");
-window.alertify = __webpack_require__(/*! alertifyjs */ "./node_modules/alertifyjs/build/alertify.js");
-
 __webpack_require__(/*! ./bootstrap */ "./src/bootstrap.js");
 
 
@@ -935,7 +933,11 @@ new Vue({
       title: 'Student List'
     };
   },
-  methods: {}
+  methods: {
+    doAdd: function doAdd(name) {
+      console.log(name);
+    }
+  }
 });
 
 /***/ }),
